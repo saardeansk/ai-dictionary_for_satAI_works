@@ -1,0 +1,29 @@
+<html>
+    <head>
+        <title>
+            DOM MANIPULATION
+        </title>
+
+    </head>
+    <body>
+         <input id="inp1" placeholder="value1">
+         <input id="inp2" placeholder="value2">
+        <button onclick = "funct()"> add</button>
+        <p id="res"> result</p>
+        <script>
+        function funct()
+        {
+          var box1 = document.getElementById("inp1")
+          var box2 = document.getElementById("inp2")
+          var val1 = Number(box1.value)
+          var val2 = Number(box2.value)
+          var  display = val1 + val2
+            console.log ("hai")
+          var  alternate = document.getElementById("res")
+          alternate.textContent = display
+
+        }
+        </script>
+    </body>
+
+</html>

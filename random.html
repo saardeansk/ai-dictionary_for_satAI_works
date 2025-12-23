@@ -1,0 +1,46 @@
+<html>
+    <head>
+        <title>
+            hai friends
+        </title>
+    </head>
+    <body>
+        <h1> GUESS THE NUMBER 0 TO 9 </h1>
+        <input id ="id" placeholder="GUESS">
+        <button onclick="fun()">check</button>
+        <p>  total ten guess chance and if random equal to guess each question contain 100 marks increase in the score </p>
+        <p id ="para1">you right / wrong</p>
+        <p id="para">score : 0/100</p>
+        <p id ="res">to check the result random number</p>
+        <script>
+            function fun()
+            {
+            var position = [0,1,2,3,4,5,6,7,8,9]
+            var rand = Math.floor(Math.random()*10)
+            var a = document.getElementById("id")
+            var para2 =document.getElementById("para1")
+            var para3 =document.getElementById("para")
+            var para4 = document.getElementById("res")
+                var val = position[rand]
+                var valur = Number(a.value)
+            if(val === valur)
+             {
+             para2.textContent ="your guess is correct"
+             para3.textContent = "score=100"
+               }
+            else if (val!= valur)
+            {    
+             para2.textContent = "your guess is wrong"
+             para3.textContent = "score = 0"
+             alert("no score")
+            }
+            if(val===valur || val!=valur)
+            {
+            para4.textContent = val
+            }
+
+            }
+        </script>
+        
+    </body>
+</html>
