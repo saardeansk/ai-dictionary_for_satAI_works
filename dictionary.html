@@ -162,15 +162,69 @@
 
 <script>
     const tools = [
-        {name:"ChatGPT", cat:"study", price:"freemium", rating:4.8, best:"Best for Ideas", desc:"Ultimate conversational AI for explaining concepts.", url:"https://chat.openai.com"},
-        {name:"Google Gemini", cat:"study", price:"freemium", rating:4.7, best:"Best for Research", desc:"Live web access for current information.", url:"https://gemini.google.com"},
-        {name:"QuillBot", cat:"writing", price:"freemium", rating:4.2, best:"Best for Paraphrasing", desc:"Rewrite essays and fix grammar instantly.", url:"https://quillbot.com"},
-        {name:"Notion AI", cat:"study", price:"paid", rating:4.5, best:"Best for Notes", desc:"AI-powered workspace for student organization.", url:"https://notion.so"},
-        {name:"Canva AI", cat:"design", price:"freemium", rating:4.3, best:"Best for Presentations", desc:"Generate graphics and slides from text.", url:"https://canva.com"},
-        {name:"GitHub Copilot", cat:"coding", price:"paid", rating:4.9, best:"Best for Programming", desc:"Real-time AI code completion.", url:"https://github.com/features/copilot"},
-        {name:"Perplexity AI", cat:"study", price:"free", rating:4.8, best:"Best for Citations", desc:"AI search engine that links every source.", url:"https://perplexity.ai"}
-    ];
 
+  // AI Assistants
+  {name:"ChatGPT", cat:"assistant", price:"freemium", rating:4.8, best:"Best for Ideas", desc:"Conversational AI for learning and ideas.", url:"https://chat.openai.com"},
+  {name:"Claude", cat:"assistant", price:"freemium", rating:4.7, best:"Best for Reasoning", desc:"Long-context reasoning assistant.", url:"https://claude.ai"},
+  {name:"Grok", cat:"assistant", price:"paid", rating:4.5, best:"Best for Live Data", desc:"AI with real-time social insights.", url:"https://x.ai"},
+  {name:"Google Gemini", cat:"assistant", price:"freemium", rating:4.7, best:"Best for Research", desc:"Google-powered AI assistant.", url:"https://gemini.google.com"},
+
+  // Video Generation
+  {name:"Synthesia", cat:"video", price:"paid", rating:4.6, best:"AI Avatars", desc:"Create videos using AI presenters.", url:"https://www.synthesia.io"},
+  {name:"Google Veo", cat:"video", price:"paid", rating:4.5, best:"Text to Video", desc:"Cinematic AI video generation.", url:"#"},
+  {name:"OpusClip", cat:"video", price:"freemium", rating:4.4, best:"Short Clips", desc:"Convert long videos to shorts.", url:"https://www.opus.pro"},
+
+  // Image Generation
+  {name:"Midjourney", cat:"image", price:"paid", rating:4.9, best:"AI Art", desc:"High-quality AI image generation.", url:"https://www.midjourney.com"},
+  {name:"GPT-4o Images", cat:"image", price:"freemium", rating:4.8, best:"Smart Images", desc:"Image generation with reasoning.", url:"https://chat.openai.com"},
+  {name:"Nano Banana", cat:"image", price:"free", rating:4.2, best:"Fast Images", desc:"Lightweight image generator.", url:"#"},  
+
+  // Writing
+  {name:"Rytr", cat:"writing", price:"freemium", rating:4.3, best:"Content Writing", desc:"Blogs and marketing content.", url:"https://rytr.me"},
+  {name:"Sudowrite", cat:"writing", price:"paid", rating:4.4, best:"Creative Writing", desc:"AI for fiction and stories.", url:"https://www.sudowrite.com"},
+
+  // Research
+  {name:"NotebookLM", cat:"research", price:"free", rating:4.6, best:"Document Research", desc:"Analyze documents with AI.", url:"https://notebooklm.google.com"},
+  {name:"Deep Research", cat:"research", price:"paid", rating:4.7, best:"Advanced Research", desc:"Deep AI-driven research.", url:"#"},  
+
+  // Search
+  {name:"Perplexity", cat:"search", price:"freemium", rating:4.8, best:"AI Search", desc:"Search with citations.", url:"https://perplexity.ai"},
+  {name:"ChatGPT Search", cat:"search", price:"freemium", rating:4.7, best:"Conversational Search", desc:"Search via chat.", url:"https://chat.openai.com"},
+
+  // Design
+  {name:"Canva Magic Studio", cat:"design", price:"freemium", rating:4.6, best:"Design AI", desc:"AI-powered design tools.", url:"https://www.canva.com"},
+  {name:"Looka", cat:"design", price:"paid", rating:4.3, best:"Logo AI", desc:"Logo and branding generator.", url:"https://looka.com"},
+
+  // Coding
+  {name:"Cursor", cat:"coding", price:"freemium", rating:4.7, best:"AI Code Editor", desc:"AI-first code editor.", url:"https://cursor.sh"},
+  {name:"Lovable", cat:"coding", price:"freemium", rating:4.5, best:"App Builder", desc:"Build apps using prompts.", url:"https://lovable.dev"},
+
+  // Knowledge
+  {name:"Notion Q&A", cat:"knowledge", price:"freemium", rating:4.6, best:"Knowledge AI", desc:"AI-powered notes.", url:"https://notion.so"},
+  {name:"Guru", cat:"knowledge", price:"paid", rating:4.4, best:"Knowledge Base", desc:"Company knowledge system.", url:"https://getguru.com"},
+
+  // Email
+  {name:"HubSpot Email Writer", cat:"email", price:"free", rating:4.5, best:"Email Writing", desc:"AI email generator.", url:"https://hubspot.com"},
+  {name:"Shortwave", cat:"email", price:"freemium", rating:4.4, best:"Smart Inbox", desc:"AI email assistant.", url:"https://shortwave.com"},
+
+  // Presentations
+  {name:"Gamma", cat:"presentation", price:"freemium", rating:4.6, best:"AI Slides", desc:"Create presentations instantly.", url:"https://gamma.app"},
+  {name:"Copilot for PowerPoint", cat:"presentation", price:"paid", rating:4.7, best:"Slide AI", desc:"AI-powered slides.", url:"https://microsoft.com"},
+
+  // Resume
+  {name:"Teal", cat:"resume", price:"freemium", rating:4.5, best:"Resume Builder", desc:"AI resume optimization.", url:"https://tealhq.com"},
+  {name:"Kickresume", cat:"resume", price:"paid", rating:4.6, best:"Resume AI", desc:"Professional resumes.", url:"https://kickresume.com"},
+
+  // Voice & Music
+  {name:"ElevenLabs", cat:"voice", price:"freemium", rating:4.9, best:"Voice AI", desc:"Realistic AI voices.", url:"https://elevenlabs.io"},
+  {name:"Murf", cat:"voice", price:"freemium", rating:4.6, best:"Voiceovers", desc:"Text-to-speech voices.", url:"https://murf.ai"},
+  {name:"Suno", cat:"music", price:"freemium", rating:4.7, best:"Music AI", desc:"Generate songs with AI.", url:"https://suno.ai"},
+  {name:"Udio", cat:"music", price:"freemium", rating:4.6, best:"AI Music", desc:"Create AI music.", url:"https://udio.com"},
+
+  // Marketing & Sales
+  {name:"AdCreative", cat:"marketing", price:"paid", rating:4.4, best:"Ad Generator", desc:"AI ad creatives.", url:"https://www.adcreative.ai"},
+  {name:"AirOps", cat:"marketing", price:"paid", rating:4.3, best:"Marketing AI", desc:"AI marketing workflows.", url:"https://airops.com"}
+];
     let priceFilter = "all", rateFilter = 0;
 
     function renderTools() {
